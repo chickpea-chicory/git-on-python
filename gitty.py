@@ -23,10 +23,10 @@ def run_git_command(command, cwd=None):
 
 def main():
     # 1. Get file path
-    file_path = input("Give the file path of your code: ").strip().strip("'\"")
+    file_path = input("give the file path of your code: ").strip().strip("'\"")
 
     if not os.path.exists(file_path):
-        print("[!] Error: File does not exist.")
+        print("oh noes: file does not exist.")
         sys.exit(1)
 
     # Determine project directory and file name
@@ -34,11 +34,11 @@ def main():
     file_name = os.path.basename(file_path)
 
     # 2. Get GitHub Repo URL and Commit MessageSS
-    repo_url = input("Enter the GitHub repo URL: ").strip()
-    commit_message = input("Enter your commit message: ").strip()
+    repo_url = input("enter the github repo URL: ").strip()
+    commit_message = input("enter your commit message: ").strip()
 
     if not commit_message:
-        commit_message = "commit message left blank"
+        commit_message = "filler message"
 
     print(f"\n[*] Initializing operations in: {repo_dir}")
 
@@ -67,10 +67,10 @@ def main():
     # Set default branch name to main and push
     run_git_command(["git", "branch", "-M", "main"], cwd=repo_dir)
 
-    print("[*] Pushing code to GitHub...")
+    print("[*] pushing code to github...")
     run_git_command(["git", "push", "-u", "origin", "main"], cwd=repo_dir)
 
-    print("\n[+] Code successfully pushed!")
+    print("\n[+] code successfully pushed to github repo")
 
 
 if __name__ == "__main__":
