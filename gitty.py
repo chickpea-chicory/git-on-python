@@ -33,12 +33,12 @@ def main():
     repo_dir = os.path.dirname(os.path.abspath(file_path))
     file_name = os.path.basename(file_path)
 
-    # 2. Get GitHub Repo URL and Commit Message
+    # 2. Get GitHub Repo URL and Commit MessageSS
     repo_url = input("Enter the GitHub repo URL: ").strip()
     commit_message = input("Enter your commit message: ").strip()
 
     if not commit_message:
-        commit_message = "Initial commit"
+        commit_message = "commit message left blank"
 
     print(f"\n[*] Initializing operations in: {repo_dir}")
 
