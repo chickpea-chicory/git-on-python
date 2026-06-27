@@ -23,10 +23,10 @@ def run_git_command(command, cwd=None):
 
 def main():
     # 1. Get file path
-    file_path = input("give the file path of your code: ").strip().strip("'\"")
+    file_path = input("give the file path of your code: ").strip().strip("'\"").lower()
 
     if not os.path.exists(file_path):
-        print("oh noes: file does not exist.")
+        print(f"oh noes: file does not exist,are you sure you typed it in correctly? for reference you typed in {file_path}")
         sys.exit(1)
 
     # Determine project directory and file name
@@ -38,7 +38,7 @@ def main():
     commit_message = input("enter your commit message: ").strip()
 
     if not commit_message:
-        commit_message = "filler message"
+        commit_message = "filler message,message not given"
 
     print(f"\n[*] Initializing operations in: {repo_dir}")
 
